@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Application</title>
+</head>
+<body>
+    <input type="text">
+    <ul></ul>
+    <script>
+        // add javascript here...
+        /* from HTML doc, get element by tag name that's called "input"
+            make sure to retrieve the first index - [0] 
+            use the ".onchange" attribute to retrieve as text changes
+            */
+           document.getElementsByTagName("input")[0].onchange = (event) => {
+               document.getElementsByTagName("ul")[0].innerHTML += `<li>${event.target.value}</li>`;
+               // if the add <li> "list" item is clicked...
+                // add an additional <li> item... *This allows application to be very dynamic/ user friendly*
+           }
+    </script>
+</body>
+</html>
