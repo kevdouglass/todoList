@@ -1,0 +1,17 @@
+/* Deprecated by (46)
+input:checked + span {
+    text-decoration: line-through;
+} */
+/* (47) new class using JS classList new code (48) makes <datalist> HTML tag with options*/
+.strike {
+    text-decoration: line-through;
+}
+
+
+
+/*  Table columns of todo list categories */
+td{
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}

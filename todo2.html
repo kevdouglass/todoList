@@ -4,10 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="todo2.css">
+
 </head>
 <body>
-    <input type="text"> <!-- (1) add input element for user to enter information -->
+    <input type="text" placeholder="Enter new to-do"> <!-- (1) add input element for user to enter information -->
+    <!-- (27) add another input box within <p> </p> tags
+        (28) is the making of a new inputBox variable in todo2.js ******
+        (48b)   Added list="categoryList" attribute from your datalist
+    -->
+    <p> <input type="text" placeholder="Enter category" list="categoryList"> </p>
+
+    <!-- (48) Data List: Options [also this allows you to make (48b) where the <input> HTML element is able to have a list="categoryList"]-->
+    <datalist id="categoryList">
+        <option value="Personal"></option>
+        <option value="Coding"></option>
+
+        <option value="Differential Eqn's"></option>
+        <option value="ECON"></option>
+        <option value="Discrete Structures"></option>
+        <option value="Chemistry"></option>
+    </datalist>
+    <!-- End of (48) -->
+
+
+    <!-- (31) -->
+    <button id="addBtn">Add</button> 
     <ul></ul> <!-- (2) add unordered list <ul></ul> element for user input data to populate -->
+    <!-- (34) Create a table and Rows for checkbox, to-do, category, delete -->
+    <table id="todo-table">
+        <tr id="">
+            <td id="">checkbox</td>
+            <td id="">to-do</td>
+            <td id="">category</td>
+            <td id="">delete</td>
+        </tr>
+    </table>
+
     <!-- (3) src="" allows you to add the JavaScript source file to HTML component -->
     <script src="todo2.js"></script> <!-- (3a) code in javascript MODULE called todoMain()-->
 </body>

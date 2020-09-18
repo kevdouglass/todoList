@@ -134,13 +134,6 @@ function todoMain(){
         var checkboxElmnt = document.createElement("input");
         //  (39b) select type of checkbox
         checkboxElmnt.type = "checkbox";
-
-        //  (45)
-        //      Add eventListener to your Checkbox
-                // will call the "done" function when clicked and add "strikethrough" to javsscript's classList api
-        checkboxElmnt.addEventListener("click", done, false);
-
-
         //  (39c) Table Column (td) Variable: td will the store checkbox 
         var Td_elemn1 = document.createElement("td");
 
@@ -201,36 +194,16 @@ function todoMain(){
         rW_Elemnt.appendChild(Td_elemn4);
 
 
-        //  (43) Add event listeners to:
-        spanElemnt.addEventListener("click", deleteItem, false);
+        // (43) Add event listeners to:
+        // spanElemnt.addEventListener("click", deleteItem, false);
 
-        //  (43b)   Define function for deleteItem()
-            //  Tells the event listener what to do when clicked
-        function deleteItem(){
-            rW_Elemnt.remove();
-        }
+        // //  (43b)   Define function for deleteItem()
+        //     //  Tells the event listener what to do when clicked
+        // function deleteItem(){
+        //     rW_Elemnt.remove();
+        // }
 
-        // (44a) 
-        //      change the onClick function to "Done()"
-                // Add event listener to checkbox next (45)
-        function done(){
-            //  (46) add the class name .strike to your CSS file 
-                            // Next (47)  updates CSS file from method) -->
-                            // input:checked + span {
-                            //     text-decoration: line-through;
-                            // } 
-                            //
-                            //      && changes name to
-                            // 
-                            // .strike {
-                            //     text-decoration: line-through;
-                            // }
 
-                        //  uses the toggle() method from classList api ...
-                        //  ... uses toggle() so dont need boolean flags
-                        //  strike makes a strike-through the lettering
-            rW_Elemnt.classList.toggle("strike");
-        }
 
 
        
@@ -319,9 +292,31 @@ function todoMain(){
     //     //liElement.innerText = inputValue;
     //      // (12b) append the NEW <li> elemnt to your <ul> element
     //     ulElement.appendChild(liElement);
+        
+    
+    
+    
+    //_____________________________________________________________________
+    //      END OF (36) Considered Depracated: Updating app to new table row style instead 
+                    //      of <li> and <ul> elements to hold user input
+    //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                // ----------> JavaScript| List, Span elements. checkboxes, delete buttons,
+                                    // Event listening (clicks(), onChange(), dblClick()),
+                                    // appending nodes, 
+                                    // checking user input/ vulnerabilities
 
 
-    // (13b) define double click function
+
+
+
+
+        
+
+
+
+
+
+            // (13b) define double click function
         // function onDblClick(){
         //     this.remove();  // "this" refers to the <liElement> that's being double Clicked
         // }
@@ -331,7 +326,7 @@ function todoMain(){
 
 // (36) Deprecated due to no use of li elements here
         // (16b) -----> changed (13a/b) function name to be more meaningful
-//        function deleteItem(){
+        function deleteItem(){
             //this.remove(); // will only remove either the <span>s "delete"-icon
             
             // (16c) removes entire <li> elmnt rather than the <span>s - "delete"-icon ||(or) the <li> elmnt
@@ -347,72 +342,35 @@ function todoMain(){
                         // if unsure, look at structure in your browsers-Console and 
                         // you will see the <li> item contains the <span> tag that contains
                         // the class for <span class="material-icons">delete</span> - button/icon
- //           liElement.remove(); // can remove this using javasript idea of "CLOSUREs"
- //       }
-
-  
- 
- 
- 
- //_____________________________________________________________________
-    //      END OF (36) Considered Depracated: Updating app to new table row style instead 
-                    //      of <li> and <ul> elements to hold user input
-    //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                // ----------> JavaScript| List, Span elements. checkboxes, delete buttons,
-                                    // Event listening (clicks(), onChange(), dblClick()),
-                                    // appending nodes, 
-                                    // checking user input/ vulnerabilities
-
+            liElement.remove(); // can remove this using javasript idea of "CLOSUREs"
+        }
 
         
-        // (44) onClick() Considered Depracated:
-        //      Updating app to suit the table and new function that allows 
-        //      classList() to toggle.
-        //
-        //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    // ----------> JavaScript| JavaScript classList intro (makes CSS class name attributes),
-                                //  CSS text styling,
-                                // toggle checkbox buttons via use of boolean flag
-                                // used when user clicked on previous <li> elements
-        //change the onClick function to "Done()"
 
         // (18b) Define function for liElements evvent listener "onClick"
-        // function onClick(){
-        //     // (20b)
-        //     // Set a flag (boolean) to change  your "line-through" back and forth
-        //     if(flag){
-        //         // (19a) add line-through to "check" off your todo-list
-        //         // this refers to the liElement variable
-        //         //this.style.textDecoration = "line-through";
-        //         // (21a) [JS classList APi]
-        //                 // instead of (19b) --> Create a CSS class attribute w/ classList to add a strike.
-        //                 //  use classList to make CSS attribute for .strike
-        //         this.classList.add("strike");
-        //         flag = !flag;
-        //     }else{
-        //         // (19b) set text decoration to "none" if already lined through, when clicked
-        //         //this.style.textDecoration = "none";
-        //         // (21a) [JS classList APi] change (19b) --> now creating a CSS class attribute w/ classList to REMOVE* the strike-through
-        //         this.classList.remove("strike");
-        //         flag = !flag;
-        //     }
-        //     // (19a) add line-through to "check" off your todo-list
-        //     // this refers to the liElement variable
-        //     //this.style.textDecoration = "line-through";
-        // }
-//
-        //      End of (44) onClick() 
-        //      Considered Depracated:
-        //      Updating app to suit the table and new function that allows ...
-        //      ... javaScripts classList() to toggle.
-        //
-        //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    // ----------> JavaScript| JavaScript classList intro (makes CSS class name attributes),
-                                //  CSS text styling,
-                                // toggle checkbox buttons via use of boolean flag
-                                // used when user clicked on previous <li> elements
-
-
+        function onClick(){
+            // (20b)
+            // Set a flag (boolean) to change  your "line-through" back and forth
+            if(flag){
+                // (19a) add line-through to "check" off your todo-list
+                // this refers to the liElement variable
+                //this.style.textDecoration = "line-through";
+                // (21a) [JS classList APi]
+                        // instead of (19b) --> Create a CSS class attribute w/ classList to add a strike.
+                        //  use classList to make CSS attribute for .strike
+                this.classList.add("strike");
+                flag = !flag;
+            }else{
+                // (19b) set text decoration to "none" if already lined through, when clicked
+                //this.style.textDecoration = "none";
+                // (21a) [JS classList APi] change (19b) --> now creating a CSS class attribute w/ classList to REMOVE* the strike-through
+                this.classList.remove("strike");
+                flag = !flag;
+            }
+            // (19a) add line-through to "check" off your todo-list
+            // this refers to the liElement variable
+            //this.style.textDecoration = "line-through";
+        }
         console.log(inputValue); // prints input to console in browser window
     }
 }
